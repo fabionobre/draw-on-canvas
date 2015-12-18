@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<body>
+
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="canvas_container.js"></script>
+		<script type="text/javascript" src="cores.js"></script>
+		<script type="text/javascript" src="marcador.js"></script>
+		
+		<div style="display: inline-block; vertical-align: top; width: 400px; height: 400px; text-align: center; border: 1px solid #000;">
+			<canvas id="digital_canvas" style="border:1px solid #d3d3d3;" class="canvas">É necessário um browser com suporte a HTML5</canvas>
+			<a href="javascript:;" class="botao_excluir" id="digital_canvas_excluir">excluir</a>
+		</div>
+
+		<div style="display: inline-block; vertical-align: top; width: 400px; text-align: center;" id="insert_teste">
+
+		</div>
+
+		<script>
+
+			var cores = new Cores();
+
+			digital = new CanvasDigital("digital_canvas", "impressao-digital.jpg", cores);
+			digital.associa_botao_excluir("digital_canvas_excluir");
+
+		</script>
+
+		<style>
+
+			.canvas:active {
+				cursor: default;
+			}
+
+			.botao_excluir, .botao_rotacionar {
+				margin-right: 10px; 
+				display: inline-block;
+			}
+
+		</style>
+
+	</body>
+</html>
